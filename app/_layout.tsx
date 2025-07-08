@@ -1,14 +1,17 @@
-import {View, Text} from "react-native";
 import '../global.css'
-import {NowPlayingAction} from "@/core/actions/movies/now-playing.action";
+import {QueryClientProvider, QueryClient} from "@tanstack/react-query";
+import {Stack} from "expo-router";
+import {SafeAreaProvider} from "react-native-safe-area-context";
 
 export default function RootLayout() {
 
-    NowPlayingAction();
+    const queryClient = new QueryClient()
 
   return (
-        <View>
-            <Text className='text-5xl'>Hola desde RootLayout</Text>
-        </View>
+      <SafeAreaProvider>
+          <QueryClientProvider client={queryClient}>
+              <Stack screenOptions={{headerShown: false}}/>
+          </QueryClientProvider>
+      </SafeAreaProvider>
   );
 }
