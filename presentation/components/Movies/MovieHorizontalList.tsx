@@ -12,7 +12,7 @@ interface  Props {
 const MovieHorizontalList = ({title,movies,className}:Props)=> {
     return (
         <View className={`${className}`}>
-            {title && <Text className='text-3xl font-bold px-4'>{title}</Text>}
+            {title && <Text className=' text-white text-xl font-bold px-4 pb-4'>{title}</Text>}
             <FlatList
                 horizontal
                 data={movies}

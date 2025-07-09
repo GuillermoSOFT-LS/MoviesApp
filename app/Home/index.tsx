@@ -14,7 +14,7 @@ const HomeScreen = () => {
     if (nowPlayingQuery.isLoading) {
         return (
             <View className='justify-center items-center flex-1'>
-                <Text>Espere un momento...</Text>
+                <Text className='pb-4'>Espere un momento...</Text>
                 <ActivityIndicator  color='blue' size={70}/>
             </View>
         )
@@ -22,17 +22,17 @@ const HomeScreen = () => {
 
     return (
         <ScrollView>
-            <View className='pb-10' style={{paddingTop: insets.top, paddingBottom: insets.bottom}}>
-                <Text className='px-4 text-3xl pt-6'>LaraMovies</Text>
+            <View className='pb-20 bg-[#111]' style={{paddingTop: insets.top, paddingBottom: insets.bottom}}>
+                <Text className='px-4 bg-black text-blue-600 text-3xl py-5'>LaraMovies</Text>
 
                 {/*Slides de imagenes*/}
                 <MainSlidesshow movies={nowPlayingQuery.data ?? []}/>
 
                 {/*Popular*/}
-                <MovieHorizontalList title='Populares'  movies={popularQuery.data ?? []}/>
+                <MovieHorizontalList title='Populares'  movies={popularQuery.data ?? []} className='pb-10'/>
 
                 {/*top rated*/}
-                <MovieHorizontalList title='Mejor calificadas'  movies={topRantedQuery.data ?? []}/>
+                <MovieHorizontalList title='Mejor calificadas'  movies={topRantedQuery.data ?? []} className='pb-10'/>
 
                 {/*upcommig*/}
                 <MovieHorizontalList title='Proximamente'  movies={upcomingQuery.data ?? []}/>

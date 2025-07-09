@@ -4,7 +4,7 @@ import {MobieMappers} from "@/Infrastructure/mappers/movie.mappers";
 
 export const topRatedMoviesAction = async() => {
     try {
-        const {data} = await MovieApi.get<MovieDBMoviesResponse>('/top-rated');
+        const {data} = await MovieApi.get<MovieDBMoviesResponse>('/top_rated');
         const movies = data.results.map(MobieMappers.fromTheMovieDBToMovie)
         return movies
 

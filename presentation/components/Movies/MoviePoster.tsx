@@ -19,7 +19,7 @@ const MoviePoster = ({id,poster,className, smallPoster = false}:Props) => {
                     width: smallPoster ? 85 : 150,
                     height: smallPoster ? 130 : 250
                 }}
-                resizeMode='cover'
+
                 />
         </Pressable>
     )
