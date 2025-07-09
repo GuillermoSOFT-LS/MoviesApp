@@ -22,8 +22,8 @@ const HomeScreen = () => {
 
     return (
         <ScrollView>
-            <View className='pb-20 bg-[#111]' style={{paddingTop: insets.top, paddingBottom: insets.bottom}}>
-                <Text className='px-4 bg-black text-blue-600 text-3xl py-5'>LaraMovies</Text>
+            <View className='pb-20 bg-[#12100f]' style={{paddingTop: insets.top, paddingBottom: insets.bottom}}>
+                <Text className='px-4 bg-[#090909] text-xl font-extrabold text-red-600 tracking-wide uppercase py-5'>MoviesPlus</Text>
 
                 {/*Slides de imagenes*/}
                 <MainSlidesshow movies={nowPlayingQuery.data ?? []}/>
