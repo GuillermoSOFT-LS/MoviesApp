@@ -1,15 +1,31 @@
-import {Text, View} from "react-native";
-import {getMovieByIdAction} from "@/core/actions/movie/get-movie-by-id.action";
-import {id} from "postcss-selector-parser";
+import {ActivityIndicator, ScrollView, Text, View} from "react-native";
+import {useLocalSearchParams} from "expo-router";
+import {useMovie} from "@/presentation/Hooks/useMovie";
+import MovieHeader from "@/presentation/components/movie/MovieHeader";
 
 const MoviesScreen=()=> {
 
-    getMovieByIdAction(+id)
+    const {id} = useLocalSearchParams()
+
+    const  {movieQuery} = useMovie(+id)
+
+    if (movieQuery.isLoading || !movieQuery.data){
+        return (
+            <View className='flex flex-1 justify-center items-center'>
+                <Text className='pb-4'>Espere por favor...</Text>
+                <ActivityIndicator color='blue' size={50}/>
+            </View>
+        )
+    }
 
     return (
-        <View>
-            <Text>Hola desde detalle movie</Text>
-        </View>
+        <ScrollView>
+            <MovieHeader
+                originalTitle={movieQuery.data.originalTitle}
+                title={movieQuery.data.title}
+                poster={movieQuery.data.poster}
+            />
+        </ScrollView>
     )
 }
 
