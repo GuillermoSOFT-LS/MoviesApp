@@ -23,7 +23,7 @@ const HomeScreen = () => {
     return (
         <ScrollView>
             <View className='pb-20 bg-[#12100f]' style={{paddingTop: insets.top, paddingBottom: insets.bottom}}>
-                <Text className='px-4 bg-[#090909] text-xl font-extrabold text-red-600 tracking-wide uppercase py-5'>PeliTrends</Text>
+                <Text className='px-4 bg-[#090909] text-xl font-extrabold text-red-700 tracking-wide uppercase py-5'>PeliTrends</Text>
 
                 {/*Slides de imagenes*/}
                 <MainSlidesshow movies={nowPlayingQuery.data ?? []}/>

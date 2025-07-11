@@ -23,7 +23,6 @@ const MovieHeader = ({poster,originalTitle,title}:Props)=> {
                 style={{
                 height:screenHeight  * 0.4,
                 position: 'absolute',
-                zIndex: 1,
                 width: '100%',
             }}/>
 
